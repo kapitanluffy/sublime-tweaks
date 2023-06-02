@@ -6,18 +6,14 @@ from typing import List, Optional, Literal,Tuple
 import sublime
 import sublime_plugin
 import re
+from .src.utils import is_setting_enabled
 
-def get_settings(key):
-    settings = sublime.load_settings("QualityOfLife.sublime-settings")
-    settings = settings.to_dict()
-
-    return settings[key] is True
 
 class TextChangeListener(sublime_plugin.TextChangeListener):
     @classmethod
     def is_applicable(cls, buffer: sublime.Buffer) -> bool:
         v = buffer.primary_view()
-        return get_settings('enable_update_tag_pairs') and v is not None and v.size() < 3963 # this feature is really laggy, disable in larger files
+        return is_setting_enabled('enable_update_tag_pairs') and v is not None and v.size() < 3963 # this feature is really laggy, disable in larger files
 
     def on_text_changed(self, changes: List[sublime.TextChange]):
         if not self.buffer:
