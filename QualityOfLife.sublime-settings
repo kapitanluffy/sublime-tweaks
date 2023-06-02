@@ -1,0 +1,16 @@
+{
+    "expand_folder": true,
+    "remove_sidebar_folder": true,
+    "open_recent_file": true,
+    "toggle_gutter": true,
+    "toggle_line_numbers": false,
+    "open_recent_folder": true,
+    "diff_files": true,
+    "add_to_selection": true,
+    "set_tab_width": true,
+    "prevent_console_when_escape": true,
+    "enable_backtick_pairing": true,
+    "enable_square_bracket_indent": true,
+    "enable_curved_bracket_indent": true,
+    "enable_update_tag_pairs": true
+}
