@@ -114,6 +114,9 @@ def is_setting_enabled(key):
 
 
 class QolRemoveSidebarFolderCommand(sublime_plugin.WindowCommand):
+    def is_enabled(self) -> bool:
+        return is_setting_enabled('remove_sidebar_folder')
+
     def run(self):
         folders = self.window.folders()
         self.window.show_quick_panel(folders, lambda index: self.on_done(index, folders))
@@ -127,6 +130,9 @@ class QolRemoveSidebarFolderCommand(sublime_plugin.WindowCommand):
 
 
 class QolOpenRecentFileCommand(sublime_plugin.WindowCommand):
+    def is_enabled(self) -> bool:
+        return is_setting_enabled('open_recent_file')
+
     def run(self):
         files = self.window.file_history()
         self.window.show_quick_panel(files, lambda index: self.on_done(index, files))
@@ -140,6 +146,9 @@ class QolOpenRecentFileCommand(sublime_plugin.WindowCommand):
 
 
 class QolToggleGutterCommand(sublime_plugin.WindowCommand):
+    def is_enabled(self) -> bool:
+        return is_setting_enabled('toggle_gutter')
+
     def run(self):
         view = self.window.active_view()
 
@@ -151,6 +160,9 @@ class QolToggleGutterCommand(sublime_plugin.WindowCommand):
 
 
 class QolToggleLineNumbersCommand(sublime_plugin.WindowCommand):
+    def is_enabled(self) -> bool:
+        return is_setting_enabled('toggle_line_numbers')
+
     def run(self):
         view = self.window.active_view()
 
@@ -162,6 +174,9 @@ class QolToggleLineNumbersCommand(sublime_plugin.WindowCommand):
 
 
 class QolOpenRecentFolderCommand(sublime_plugin.WindowCommand):
+    def is_enabled(self) -> bool:
+        return is_setting_enabled('open_recent_folder')
+
     def run(self):
         folder_history = sublime.folder_history()
         project_data = get_project_data(self.window)
@@ -211,7 +226,7 @@ class QolExpandFolderCommand(sublime_plugin.WindowCommand):
 
 class QolDiffFilesCommand(sublime_plugin.WindowCommand):
     def is_enabled(self):
-        return len(self.window.sheets()) > 1
+        return len(self.window.sheets()) > 1 and is_setting_enabled('diff_files')
 
     def run(self):
         sheets = get_all_sheets(self.window)
@@ -257,7 +272,7 @@ class QolDiffFilesCommand(sublime_plugin.WindowCommand):
 
 class QolAddToSelectionCommand(sublime_plugin.WindowCommand):
     def is_enabled(self):
-        return len(self.window.sheets()) > 1
+        return len(self.window.sheets()) > 1 and is_setting_enabled('add_to_selection')
 
     def run(self):
         sheets = get_all_sheets(self.window)
@@ -304,6 +319,9 @@ class QolAddToSelectionCommand(sublime_plugin.WindowCommand):
 
 
 class QolSetTabWidthCommand(sublime_plugin.WindowCommand):
+    def is_enabled(self):
+        return len(self.window.sheets()) > 1 and is_setting_enabled('set_tab_width')
+
     def run(self):
         self.tab_widths = ['1', '2', '3', '4', '5', '6', '7', '8']
         self.window.show_quick_panel(self.tab_widths, self.on_done)
