@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/Made%20For-Sublime-ff9800?logo=sublime%20text" /></a>
 <a href="https://packagecontrol.io/packages/Tweaks">
     <img src="https://img.shields.io/packagecontrol/dt/Tweaks" /></a>
-<a href="https://github.com/kapitanluffy/sublime-graphql-playground/releases">
+<a href="https://github.com/kapitanluffy/sublime-tweaks/releases">
     <img src="https://img.shields.io/github/v/tag/kapitanluffy/sublime-tweaks?label=release" /></a>
 <a href="https://github.com/sponsors/kapitanluffy">
     <img alt="GitHub Sponsors" src="https://img.shields.io/github/sponsors/kapitanluffy"></a>
