@@ -1,7 +1,7 @@
 import sublime_plugin
 from .utils import is_setting_enabled
 
-class QolToggleGutterCommand(sublime_plugin.WindowCommand):
+class TweaksToggleGutterCommand(sublime_plugin.WindowCommand):
     def is_enabled(self) -> bool:
         return is_setting_enabled('toggle_gutter')
 

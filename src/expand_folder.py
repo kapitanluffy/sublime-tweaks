@@ -1,7 +1,7 @@
 import sublime_plugin
 from .utils import is_setting_enabled, get_project_data, expand_folders, get_expanded_folders
 
-class QolExpandFolderCommand(sublime_plugin.WindowCommand):
+class TweaksExpandFolderCommand(sublime_plugin.WindowCommand):
     def is_enabled(self) -> bool:
         return is_setting_enabled('expand_sidebar_folder')
 

@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 from .utils import is_setting_enabled, get_all_sheets
 
-class QolAddToSelectionCommand(sublime_plugin.WindowCommand):
+class TweaksAddToSelectionCommand(sublime_plugin.WindowCommand):
     def is_enabled(self):
         return len(self.window.sheets()) > 1 and is_setting_enabled('add_to_selection')
 

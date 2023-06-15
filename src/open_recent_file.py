@@ -1,7 +1,7 @@
 import sublime_plugin
 from .utils import is_setting_enabled
 
-class QolOpenRecentFileCommand(sublime_plugin.WindowCommand):
+class TweaksOpenRecentFileCommand(sublime_plugin.WindowCommand):
     def is_enabled(self) -> bool:
         return is_setting_enabled('open_recent_file')
 

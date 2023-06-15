@@ -126,7 +126,7 @@ def get_expanded_folders():
 
 
 def is_setting_enabled(key):
-    settings = sublime.load_settings("QualityOfLife.sublime-settings")
+    settings = sublime.load_settings("Tweaks.sublime-settings")
     settings = settings.to_dict()
 
     return settings[key] is True

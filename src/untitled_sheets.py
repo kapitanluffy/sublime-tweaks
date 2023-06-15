@@ -3,7 +3,7 @@ import sublime_plugin
 from .utils import is_setting_enabled
 
 
-class QolUntitledSheetsListener(sublime_plugin.ViewEventListener):
+class TweaksUntitledSheetsListener(sublime_plugin.ViewEventListener):
     RESERVED_VIEW_NAMES = ["Find Results"]
 
     @classmethod
@@ -41,19 +41,19 @@ class QolUntitledSheetsListener(sublime_plugin.ViewEventListener):
         if self.view.element() is not None:
             return
 
-        if self.view.file_name() is None and self.view.name() not in QolUntitledSheetsListener.RESERVED_VIEW_NAMES:
+        if self.view.file_name() is None and self.view.name() not in TweaksUntitledSheetsListener.RESERVED_VIEW_NAMES:
             self.generate_view_name(self.view)
 
     def on_activated_async(self):
         if self.view.element() is not None:
             return
 
-        if self.view.file_name() is None and self.view.name() not in QolUntitledSheetsListener.RESERVED_VIEW_NAMES:
+        if self.view.file_name() is None and self.view.name() not in TweaksUntitledSheetsListener.RESERVED_VIEW_NAMES:
             self.generate_view_name(self.view)
 
     def on_modified_async(self):
         if self.view.element() is not None:
             return
 
-        if self.view.file_name() is None and self.view.name() not in QolUntitledSheetsListener.RESERVED_VIEW_NAMES:
+        if self.view.file_name() is None and self.view.name() not in TweaksUntitledSheetsListener.RESERVED_VIEW_NAMES:
             self.generate_view_name(self.view)

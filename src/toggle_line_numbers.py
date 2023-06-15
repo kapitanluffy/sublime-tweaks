@@ -1,7 +1,7 @@
 import sublime_plugin
 from .utils import is_setting_enabled
 
-class QolToggleLineNumbersCommand(sublime_plugin.WindowCommand):
+class TweaksToggleLineNumbersCommand(sublime_plugin.WindowCommand):
     def is_enabled(self) -> bool:
         return is_setting_enabled('toggle_line_numbers')
 

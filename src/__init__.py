@@ -1,4 +1,4 @@
-from ..quality_of_life import reload
+from ..tweaks import reload
 
 reload("src", [
     "utils",
@@ -36,8 +36,8 @@ from .toggle_gutter import *
 from .toggle_line_numbers import *
 from .reveal_in_sidebar import *
 from .copy_line_up import *
-from .untitled_sheets import QolUntitledSheetsListener
-from .update_tag_pairs import QolUpdateTagPairsListener, QolSideUpdateTagCommand
+from .untitled_sheets import TweaksUntitledSheetsListener
+from .update_tag_pairs import TweaksUpdateTagPairsListener, TweaksSideUpdateTagCommand
 
 __all__ = [
     "get_all_sheets",
@@ -49,21 +49,21 @@ __all__ = [
     "expand_folders",
     "get_expanded_folders",
     "is_setting_enabled",
-    "QolAddToSelectionCommand",
-    "QolDiffFilesCommand",
-    "QolExpandFolderCommand",
-    "QolCollapseFolderCommand",
-    "QolKeybindContextListener",
-    "QolOpenRecentFileCommand",
-    "QolOpenRecentFolderCommand",
-    "QolReindentPythonCommand",
-    "QolRemoveSidebarFolderCommand",
-    "QolSetTabWidthCommand",
-    "QolToggleGutterCommand",
-    "QolToggleLineNumbersCommand",
-    "QolUntitledSheetsListener",
-    "QolUpdateTagPairsListener",
-    "QolSideUpdateTagCommand",
-    "QolRevealInSidebarCommand",
-    "QolCopyLineUpCommand",
+    "TweaksAddToSelectionCommand",
+    "TweaksDiffFilesCommand",
+    "TweaksExpandFolderCommand",
+    "TweaksCollapseFolderCommand",
+    "TweaksKeybindContextListener",
+    "TweaksOpenRecentFileCommand",
+    "TweaksOpenRecentFolderCommand",
+    "TweaksReindentPythonCommand",
+    "TweaksRemoveSidebarFolderCommand",
+    "TweaksSetTabWidthCommand",
+    "TweaksToggleGutterCommand",
+    "TweaksToggleLineNumbersCommand",
+    "TweaksUntitledSheetsListener",
+    "TweaksUpdateTagPairsListener",
+    "TweaksSideUpdateTagCommand",
+    "TweaksRevealInSidebarCommand",
+    "TweaksCopyLineUpCommand",
 ]

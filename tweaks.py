@@ -2,7 +2,7 @@ import sys
 import imp
 
 def reload(prefix, modules=[""]):
-    prefix = "QualityOfLife.%s." % prefix
+    prefix = "Tweaks.%s." % prefix
 
     for module in modules:
         module = (prefix + module).rstrip(".")

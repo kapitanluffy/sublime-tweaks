@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 
 
-class QolDoubleClickCommand(sublime_plugin.TextCommand):
+class TweaksDoubleClickCommand(sublime_plugin.TextCommand):
     """
     This command will emulate a double left click at the caret position(s).
     (If there is a selection, it will use the beginning of the selection.)

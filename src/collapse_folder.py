@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 from .utils import is_setting_enabled, collapse_folder, get_expanded_folders, get_project_data
 
-class QolCollapseFolderCommand(sublime_plugin.WindowCommand):
+class TweaksCollapseFolderCommand(sublime_plugin.WindowCommand):
     def is_enabled(self) -> bool:
         return is_setting_enabled('expand_sidebar_folder')
 

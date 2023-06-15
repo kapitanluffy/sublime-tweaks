@@ -3,7 +3,7 @@ import sublime_plugin
 from .utils import is_setting_enabled, get_all_sheets
 
 
-class QolDiffFilesCommand(sublime_plugin.WindowCommand):
+class TweaksDiffFilesCommand(sublime_plugin.WindowCommand):
     def is_enabled(self):
         return len(self.window.sheets()) > 1 and is_setting_enabled('diff_files')
 

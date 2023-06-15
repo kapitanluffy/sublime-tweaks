@@ -9,7 +9,7 @@ IN_BLOCK = "IN_BLOCK"
 END_BLOCK = "END_BLOCK"
 END_BLOCK = "END_BLOCK"
 
-class QolReindentPythonCommand(sublime_plugin.TextCommand):
+class TweaksReindentPythonCommand(sublime_plugin.TextCommand):
     block_stack = []
 
     def is_enabled(self):

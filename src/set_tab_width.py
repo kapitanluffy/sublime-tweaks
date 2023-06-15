@@ -2,7 +2,7 @@ import sublime_plugin
 from .utils import is_setting_enabled
 
 
-class QolSetTabWidthCommand(sublime_plugin.WindowCommand):
+class TweaksSetTabWidthCommand(sublime_plugin.WindowCommand):
     def is_enabled(self):
         return len(self.window.sheets()) > 1 and is_setting_enabled('set_tab_width')
 

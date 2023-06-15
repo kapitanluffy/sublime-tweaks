@@ -9,7 +9,7 @@ import re
 from .utils import is_setting_enabled
 
 
-class QolUpdateTagPairsListener(sublime_plugin.TextChangeListener):
+class TweaksUpdateTagPairsListener(sublime_plugin.TextChangeListener):
     @classmethod
     def is_applicable(cls, buffer: sublime.Buffer) -> bool:
         v = buffer.primary_view()
@@ -25,7 +25,7 @@ class QolUpdateTagPairsListener(sublime_plugin.TextChangeListener):
         if not view:
             return
         for c in changes:
-            sublime.set_timeout(lambda: view.run_command('qol_side_update_tag'))
+            sublime.set_timeout(lambda: view.run_command('tweaks_side_update_tag'))
 
 
 class EL(sublime_plugin.EventListener):
@@ -38,7 +38,7 @@ class EL(sublime_plugin.EventListener):
             sublime.set_timeout(reset)
 
 
-class QolSideUpdateTagCommand(sublime_plugin.TextCommand):
+class TweaksSideUpdateTagCommand(sublime_plugin.TextCommand):
     """ This command is guaranteed to executed when { is pressed """
     def run(self, edit):
         v = self.view

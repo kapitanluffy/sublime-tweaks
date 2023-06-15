@@ -5,26 +5,26 @@
         "mnemonic": "P",
         "id": "package-settings",
         "children": [
-          { "caption": "QualityOfLife",
+          { "caption": "Tweaks",
             "children": [
               { "caption": "README",
                 "command": "open_file",
                 "args": {
-                  "file": "${packages}/QualityOfLife/README.md"
+                  "file": "${packages}/Tweaks/README.md"
                 }
               },
               { "caption": "-" },
               { "caption": "Settings",
                 "command": "edit_settings",
                 "args": {
-                  "base_file": "${packages}/QualityOfLife/QualityOfLife.sublime-settings",
+                  "base_file": "${packages}/Tweaks/Tweaks.sublime-settings",
                   "default": "{\n\t$0\n}\n"
                 }
               },
               { "caption": "Key Bindings",
                 "command": "edit_settings",
                 "args": {
-                  "base_file": "${packages}/QualityOfLife/Default.sublime-keymap",
+                  "base_file": "${packages}/Tweaks/Default.sublime-keymap",
                   "default": "[\n\t$0\n]\n"
                 }
               },

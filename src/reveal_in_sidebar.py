@@ -1,7 +1,7 @@
 import sublime_plugin
 from .utils import is_setting_enabled
 
-class QolRevealInSidebarCommand(sublime_plugin.WindowCommand):
+class TweaksRevealInSidebarCommand(sublime_plugin.WindowCommand):
     def is_enabled(self) -> bool:
         return is_setting_enabled('enable_reveal_in_sidebar')
 

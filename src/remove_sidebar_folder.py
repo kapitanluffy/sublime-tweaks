@@ -1,7 +1,7 @@
 import sublime_plugin
 from .utils import is_setting_enabled
 
-class QolRemoveSidebarFolderCommand(sublime_plugin.WindowCommand):
+class TweaksRemoveSidebarFolderCommand(sublime_plugin.WindowCommand):
     def is_enabled(self) -> bool:
         return is_setting_enabled('remove_sidebar_folder')
 
