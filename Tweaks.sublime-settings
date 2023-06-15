@@ -15,7 +15,7 @@
     "toggle_gutter": true,
 
     // Toggle line numbers for current view
-    "toggle_line_numbers": false,
+    "toggle_line_numbers": true,
 
     // Diff current active view
     "diff_files": true,
@@ -36,7 +36,7 @@
     "enable_backtick_pairing": true,
 
     // Automatically indent `[]` square brackets when Enter is pressed
-    "enable_square_bracket_indent": false,
+    "enable_square_bracket_indent": true,
 
     // Automatically indent `()` curved brackets when Enter is pressed
     "enable_curved_bracket_indent": true,
