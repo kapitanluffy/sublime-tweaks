@@ -1,9 +1,7 @@
 import sublime
 from typing import Dict, Any, cast
 import os
-
-def plugin_loaded():
-    print("helpers!")
+import re
 
 
 def get_all_sheets(window: sublime.Window, include_active_sheet=False):
@@ -73,6 +71,29 @@ def expand_folder(window: sublime.Window, folder):
             window.open_file(item, flags=sublime.TRANSIENT)
             window.run_command('reveal_in_side_bar')
             return True
+
+
+def collapse_folder(window: sublime.Window, folder):
+    target = None
+    folders = get_expanded_folders()
+    project_data = get_project_data(window)
+    folders.remove(folder)
+
+    for i, f in enumerate(project_data['folders']):
+        if f['path'] == folder:
+            target = { "index": i, "folder": f }
+            break
+
+    if target is None:
+        raise Exception("Folder is not in the sidebar")
+
+    project_data['folders'].pop(target['index'])
+    window.set_project_data(project_data)
+
+    project_data['folders'].insert(target['index'], target['folder'])
+    window.set_project_data(project_data)
+
+    sublime.set_timeout_async(lambda: expand_folders(window, folders))
 
 
 def expand_folders(window: sublime.Window, folders):

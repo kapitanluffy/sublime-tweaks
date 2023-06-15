@@ -1,16 +1,58 @@
 {
-    "expand_folder": true,
+    // Expand a sidebar folder
+    "expand_sidebar_folder": true,
+
+    // Remove a sidebar folder
     "remove_sidebar_folder": true,
+
+    // Open a recent file
     "open_recent_file": true,
-    "toggle_gutter": true,
-    "toggle_line_numbers": false,
+
+    // Open a recent folder
     "open_recent_folder": true,
+
+    // Toggle gutter for current view
+    "toggle_gutter": true,
+
+    // Toggle line numbers for current view
+    "toggle_line_numbers": false,
+
+    // Diff current active view
     "diff_files": true,
+
+    // Add a view to multi-tab select
     "add_to_selection": true,
+
+    // Enable setting tab width via command palette
     "set_tab_width": true,
+
+    // Prevent panels from closing when escape is pressed when not focused
     "prevent_console_when_escape": true,
+
+    // Force closing panels when pressing "shift+escape"
+    "enable_force_close_panel": true,
+
+    // Enable backticks to automatically generate pairs
     "enable_backtick_pairing": true,
-    "enable_square_bracket_indent": true,
+
+    // Automatically indent `[]` square brackets when Enter is pressed
+    "enable_square_bracket_indent": false,
+
+    // Automatically indent `()` curved brackets when Enter is pressed
     "enable_curved_bracket_indent": true,
-    "enable_update_tag_pairs": true
+
+    // Automatically update tag pairs. Note that this is buggy
+    "enable_update_tag_pairs": true,
+
+    // Enable reworked python reindent
+    "reindent_python": true,
+
+    // Automatically generate names for untitled sheets
+    "autoname_untitled_sheets": true,
+
+    //  Enable reveal in sidebar command
+    "enable_reveal_in_sidebar": true,
+
+    // Enable copy lines up
+    "enable_copy_line_up": true,
 }

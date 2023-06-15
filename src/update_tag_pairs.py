@@ -6,14 +6,17 @@ from typing import List, Optional, Literal,Tuple
 import sublime
 import sublime_plugin
 import re
-from .src.utils import is_setting_enabled
+from .utils import is_setting_enabled
 
 
-class TextChangeListener(sublime_plugin.TextChangeListener):
+class QolUpdateTagPairsListener(sublime_plugin.TextChangeListener):
     @classmethod
     def is_applicable(cls, buffer: sublime.Buffer) -> bool:
         v = buffer.primary_view()
-        return is_setting_enabled('enable_update_tag_pairs') and v is not None and v.size() < 3963 # this feature is really laggy, disable in larger files
+        is_normal_view = v.element() is None
+
+        # this feature is really laggy, disable in larger files
+        return is_setting_enabled('enable_update_tag_pairs') and is_normal_view and v is not None and v.size() < 3963
 
     def on_text_changed(self, changes: List[sublime.TextChange]):
         if not self.buffer:
@@ -22,7 +25,7 @@ class TextChangeListener(sublime_plugin.TextChangeListener):
         if not view:
             return
         for c in changes:
-            sublime.set_timeout(lambda: view.run_command('side_update_tag'))
+            sublime.set_timeout(lambda: view.run_command('qol_side_update_tag'))
 
 
 class EL(sublime_plugin.EventListener):
@@ -35,14 +38,15 @@ class EL(sublime_plugin.EventListener):
             sublime.set_timeout(reset)
 
 
-class SideUpdateTag(sublime_plugin.TextCommand):
+class QolSideUpdateTagCommand(sublime_plugin.TextCommand):
     """ This command is guaranteed to executed when { is pressed """
     def run(self, edit):
         v = self.view
         point = get_cursor_point(v)
         if not point:
             return
-        if v.size() > 3963: # this feature is really laggy, disable in larger files
+        # this feature is really laggy, disable in larger files
+        if v.size() > 3963:
             return
         if not is_in_tag(v, point):
             return None
@@ -151,7 +155,7 @@ def tag_type(v, r):
         return 'open_tag'
     elif re.search("^<\s*>", tag_text):
         return 'open_tag'
-    print('SIDE: oh no', v.substr(r))
+    print('SIDE: oh no', v.substr(r), v.rowcol(r.a))
     return 'oh_no'
 
 def find_closing(v, regions):

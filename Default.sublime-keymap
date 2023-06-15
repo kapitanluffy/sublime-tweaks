@@ -1,5 +1,11 @@
 [
-    // From: https://github.com/jfcherng-sublime/ST-my-settings/blob/master/Packages/User/my_keymap/LatinQuotes/Default.sublime-keymap
+    {
+        "keys": ["ctrl+alt+d"],
+        "command": "qol_copy_line_up"
+    },
+    // From:
+    //  https://github.com/jfcherng-sublime/ST-my-settings/blob/master/Packages/User/my_keymap/LatinQuotes/Default.sublime-keymap
+    //  https://ptb.discord.com/channels/280102180189634562/509144409850511362/1092705853351657472
     // better parentheses auto indentation
     {
         "keys": [ "enter" ],
@@ -133,12 +139,13 @@
             { "key": "panel_has_focus", "operator": "equal", "operand": false }
         ]
     },
-    // {
-    //     "keys": [ "shift+escape" ],
-    //     "command": "hide_panel",
-    //     "args": { "cancel": true },
-    //     "context": [
-    //         { "key": "panel_visible", "operator": "equal", "operand": true },
-    //     ]
-    // },
+    {
+        "keys": [ "shift+escape" ],
+        "command": "hide_panel",
+        "args": { "cancel": true },
+        "context": [
+            { "key": "qol_force_escape" },
+            { "key": "panel_visible", "operator": "equal", "operand": true },
+        ]
+    },
 ]
