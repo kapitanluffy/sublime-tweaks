@@ -1,12 +1,10 @@
-#### Sublime Tweaks
+### Sublime Tweaks
 
 🔧 Small random tweaks packed in one plugin
 
 <p align="center">
 <a href="https://www.sublimetext.com/">
     <img src="https://img.shields.io/badge/Made%20For-Sublime-ff9800?logo=sublime%20text" /></a>
-<a href="https://packagecontrol.io/packages/Tweaks">
-    <img src="https://img.shields.io/packagecontrol/dt/Tweaks" /></a>
 <a href="https://github.com/kapitanluffy/sublime-tweaks/releases">
     <img src="https://img.shields.io/github/v/tag/kapitanluffy/sublime-tweaks?label=release" /></a>
 <a href="https://github.com/sponsors/kapitanluffy">
@@ -22,7 +20,17 @@ I am still lazy to screen capture each tweak but I promise you they ~~kinda~~ wo
 
 ---
 
-##### Command Palette
+#### How To Install
+
+Since [this won't be added](https://github.com/wbond/package_control_channel/pull/8776) to the official Package control channel, we need to manually add it
+
+1. Add this repository to Package Control. Run `Add Repository` from the Command Palette
+
+2. Paste the repository URL in the field: `https://github.com/kapitanluffy/sublime-tweaks`
+
+3. Run `Install Package` from the Command Palette and search for `sublime-tweaks`
+
+#### Command Palette
 - Toggle View Gutter
 - Toggle View Line Numbers
 - Reveal File in Sidebar
@@ -41,23 +49,23 @@ I am still lazy to screen capture each tweak but I promise you they ~~kinda~~ wo
 - Reindent Python 🐛
 - Set Line Ending to (CRLF, LF, CR)
 
-##### Keybinds
+#### Keybinds
 - Copy Line Up (ctrl+alt+d)
 - Auto Indent Curved Brackets
 - Auto Indent Square Brackets
 - Auto Pair Backticks
 - Prevent unfocused panels from closing on Esc
 
-##### Others
+#### Others
 - Auto update tag pairs 🐛
 - Autoname untitled tabs 🐛
 
 *some are hacks, items with 🐛 are to be expected as buggy*
 
-##### Support
+#### Support
 
 You can always support me via [Github Sponsors](https://github.com/sponsors/kapitanluffy),
 
-##### License
+#### License
 
 [MIT](LICENSE)
