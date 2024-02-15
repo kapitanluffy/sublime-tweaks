@@ -11,7 +11,8 @@ class TweaksOpenRecentFolderCommand(sublime_plugin.WindowCommand):
         project_data = get_project_data(self.window)
 
         for folder in project_data['folders']:
-            folder_history.remove(folder['path'])
+            if folder['path'] in folder_history:
+                folder_history.remove(folder['path'])
 
         self.window.show_quick_panel(folder_history, lambda index: self.on_done(index, folder_history))
 

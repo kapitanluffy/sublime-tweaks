@@ -26,7 +26,7 @@ def get_project_data(window: sublime.Window):
 
 def load_session_file():
     session_file = os.path.abspath(os.path.join(sublime.packages_path(), "..", "Local", "Auto Save Session.sublime_session"))
-    sfh = open(session_file)
+    sfh = open(session_file, 'r', encoding='utf-8')
     session_file_contents = sfh.read()
     sfh.close()
     contents = sublime.decode_value(session_file_contents)
