@@ -18,5 +18,7 @@
     { "caption": "Twks: Set Line Ending to Windows (CRLF)", "command": "set_line_ending", "args": {"type": "windows"} },
     { "caption": "Twks: Set Line Ending to Unix (LF)", "command": "set_line_ending", "args": {"type": "unix"} },
     { "caption": "Twks: Set Line Ending to MacOS (CR)", "command": "set_line_ending", "args": {"type": "cr"} },
+    { "caption": "Twks: Move Sidebar To Right", "command": "tweaks_switch_sidebar_right" },
+    { "caption": "Twks: Move Sidebar To Left", "command": "tweaks_switch_sidebar_left" },
     { "caption": "GetLocation: Get Cursor Location", "command": "get_location_current" },
 ]

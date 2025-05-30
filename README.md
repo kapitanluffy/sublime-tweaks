@@ -48,6 +48,8 @@ Since [this won't be added](https://github.com/wbond/package_control_channel/pul
 - Set Tab Width
 - Reindent Python 🐛
 - Set Line Ending to (CRLF, LF, CR)
+- Switch Sidebar to (Right/Left)
+- Get Current Cursor Location
 
 #### Keybinds
 - Copy Line Up (ctrl+alt+d)

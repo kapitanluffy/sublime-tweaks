@@ -19,6 +19,7 @@ reload("src", [
     "update_tag_pairs",
     "reveal_in_sidebar",
     "copy_line_up",
+    "switch_sidebar",
 ])
 
 from .utils import *
@@ -38,6 +39,7 @@ from .reveal_in_sidebar import *
 from .copy_line_up import *
 from .untitled_sheets import TweaksUntitledSheetsListener
 from .update_tag_pairs import TweaksUpdateTagPairsListener, TweaksSideUpdateTagCommand
+from .switch_sidebar import *
 
 __all__ = [
     "get_all_sheets",
@@ -66,4 +68,6 @@ __all__ = [
     "TweaksSideUpdateTagCommand",
     "TweaksRevealInSidebarCommand",
     "TweaksCopyLineUpCommand",
+    "TweaksSwitchSidebarRightCommand",
+    "TweaksSwitchSidebarLeftCommand",
 ]
