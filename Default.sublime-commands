@@ -18,4 +18,5 @@
     { "caption": "Twks: Set Line Ending to Windows (CRLF)", "command": "set_line_ending", "args": {"type": "windows"} },
     { "caption": "Twks: Set Line Ending to Unix (LF)", "command": "set_line_ending", "args": {"type": "unix"} },
     { "caption": "Twks: Set Line Ending to MacOS (CR)", "command": "set_line_ending", "args": {"type": "cr"} },
+    { "caption": "GetLocation: Get Cursor Location", "command": "get_location_current" },
 ]
