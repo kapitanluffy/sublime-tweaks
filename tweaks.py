@@ -1,14 +1,18 @@
-import sys
-import imp
-
-def reload(prefix, modules=[""]):
-    prefix = "Tweaks.%s." % prefix
-
-    for module in modules:
-        module = (prefix + module).rstrip(".")
-        if module in sys.modules:
-            imp.reload(sys.modules[module])
-
-reload("src")
-
-from .src import *
+from .src.add_to_selection import *
+from .src.collapse_folder import *
+from .src.copy_line_up import *
+from .src.diff_files import *
+from .src.expand_folder import *
+from .src.get_location_current import *
+from .src.keybind_context import *
+from .src.open_recent_file import *
+from .src.open_recent_folder import *
+from .src.reindent_python import *
+from .src.remove_sidebar_folder import *
+from .src.reveal_in_sidebar import *
+from .src.set_tab_width import *
+from .src.toggle_gutter import *
+from .src.toggle_line_numbers import *
+from .src.untitled_sheets import *
+from .src.update_tag_pairs import *
+from .src.utils import *
