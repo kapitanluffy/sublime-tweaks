@@ -15,4 +15,5 @@ from .src.toggle_gutter import *
 from .src.toggle_line_numbers import *
 from .src.untitled_sheets import *
 from .src.update_tag_pairs import *
+from .src.save_all import *
 from .src.utils import *

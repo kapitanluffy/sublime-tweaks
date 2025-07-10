@@ -21,4 +21,5 @@
     { "caption": "Twks: Open/Add Sidebar Folder (deprecated)", "command": "prompt_add_folder" },
     { "caption": "Twks: Close/Remove Sidebar Folder (deprecated)", "command": "tweaks_remove_sidebar_folder" },
     { "caption": "Twks: Toggle Open Files (deprecated)", "command": "toggle_show_open_files" },
+    { "caption": "Twks: Save All", "command": "tweaks_save_all" },
 ]
