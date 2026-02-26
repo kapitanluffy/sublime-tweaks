@@ -4,7 +4,7 @@ from .utils import is_setting_enabled
 
 class TweaksSetTabWidthCommand(sublime_plugin.WindowCommand):
     def is_enabled(self):
-        return len(self.window.sheets()) > 1 and is_setting_enabled('set_tab_width')
+        return is_setting_enabled('set_tab_width')
 
     def run(self):
         self.tab_widths = ['1', '2', '3', '4', '5', '6', '7', '8']
