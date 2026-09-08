@@ -1,3 +1,4 @@
+import os
 import sublime_plugin
 from .utils import is_setting_enabled, get_project_data, expand_folders, get_expanded_folders
 
@@ -21,4 +22,12 @@ class TweaksExpandFolderCommand(sublime_plugin.WindowCommand):
         if index < 0:
             return
 
-        expand_folders(self.window, [folders[index]])
+        selected_folder = folders[index]
+
+        if not os.path.isabs(selected_folder):
+            window_variables = self.window.extract_variables()
+            project_path = window_variables["project_path"]
+            selected_folder = os.path.abspath(os.path.join(project_path, selected_folder))
+
+        # @todo rework, conversion to abs should be handled inside
+        expand_folders(self.window, [selected_folder])

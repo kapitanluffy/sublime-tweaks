@@ -1,3 +1,4 @@
+from typing_extensions import List
 import sublime
 from typing import Dict, Any, cast
 import os
@@ -53,7 +54,9 @@ def convert_path_to_windows(path):
 
 def expand_folder(window: sublime.Window, folder):
     if os.path.exists(folder) is False:
-        print("Folder does not exist: %s" % folder)
+        window_variables = window.extract_variables()
+        project_path = window_variables["project_path"]
+        print("Folder does not exist: %s" % os.path.abspath(os.path.join(project_path, folder)))
         return False
 
     if is_windows_path_standard(folder) is False:
@@ -73,14 +76,29 @@ def expand_folder(window: sublime.Window, folder):
             return True
 
 
-def collapse_folder(window: sublime.Window, folder):
+def collapse_folder(window: sublime.Window, folder: str):
+    window_variables = window.extract_variables()
+    project_path = window_variables["project_path"]
+    abs_folder_path = os.path.abspath(os.path.join(project_path, folder))
+
     target = None
+    # always returns the absolute pah
     folders = get_expanded_folders()
     project_data = get_project_data(window)
-    folders.remove(folder)
+
+    folders.remove(abs_folder_path)
+
+    # remove all paths that branches from specified folder
+    for i, f in enumerate(folders):
+        if f.startswith(abs_folder_path):
+            _ = folders.pop(i)
 
     for i, f in enumerate(project_data['folders']):
-        if f['path'] == folder:
+        project_folder_path = f['path']
+        if not os.path.isabs(project_folder_path):
+            project_folder_path = os.path.abspath(os.path.join(project_path, project_folder_path))
+        # @todo should have a function for comparing abs and rel paths
+        if project_folder_path == abs_folder_path:
             target = { "index": i, "folder": f }
             break
 
@@ -109,7 +127,7 @@ def expand_folders(window: sublime.Window, folders):
     window.focus_view(initial_view)
 
 
-def get_expanded_folders():
+def get_expanded_folders() -> List[str]:
     session = load_session_file()
     folders_to_expand = []
 

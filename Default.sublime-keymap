@@ -1,4 +1,5 @@
 [
+    { "keys": ["ctrl+k", "g", "l"], "command": "get_location_current" },
     {
         "keys": ["ctrl+alt+d"],
         "command": "tweaks_copy_line_up"
