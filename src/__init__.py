@@ -40,6 +40,7 @@ from .copy_line_up import *
 from .untitled_sheets import TweaksUntitledSheetsListener
 from .update_tag_pairs import TweaksUpdateTagPairsListener, TweaksSideUpdateTagCommand
 from .switch_sidebar import *
+from .reverse_characters import *
 
 __all__ = [
     "get_all_sheets",
@@ -70,4 +71,5 @@ __all__ = [
     "TweaksCopyLineUpCommand",
     "TweaksSwitchSidebarRightCommand",
     "TweaksSwitchSidebarLeftCommand",
+    "TweaksReverseCharactersCommand",
 ]
